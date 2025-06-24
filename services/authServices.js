@@ -6,7 +6,7 @@ const functionsService = {
             email: email
         })
     },
-    postUser: async (name, email, passHash)=>{
+    postUser: (name, email, passHash)=>{
         const user = new User({
             name,
             email,
