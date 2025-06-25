@@ -18,6 +18,13 @@ const functionsService = {
         } catch (error) {
             return false
         }
+    },
+    getUserById: (id, pass) => {
+        try {
+            return User.findById(id, pass) 
+        } catch (error) {
+            return false
+        }
     }
 }
 

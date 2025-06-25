@@ -57,6 +57,15 @@ const functionsController = {
         } catch (error) {
             return res.json({msg: "acesso negado"})
         }
+    },
+    privateRoute: async (req, res)=>{
+        const id = req.params.id
+
+        const user = await authServices.getUserById(id, "-password")
+        if(!user){
+            return res.json({msg:"usuario nao existe"})
+        }
+        return res.json({user})
     }
 }
 
